@@ -7,7 +7,7 @@
       name="description"
       content="This is a form page where users can submit their information."
     />
-    <title>Form Paget</title>
+    <title>Form Page</title>
   </head>
   <body>
     <h1>Contact Form</h1>
@@ -47,9 +47,18 @@
 
         <input type="radio" name="gender" id="female" value="female" />
         <label for="female">Female</label><br />
+        <input type="radio" name="gender" id="other" value="other" />
+        <label for="other">Other</label><br /><br />
       </section>
-      <input type="radio" name="gender" id="other" value="other" />
-      <label for="other">Other</label><br /><br />
+      <section>
+        Choose your favorite programming languages:
+        <select name="languages" id="javascript">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="csharp">C#</option>
+        </select><br /><br />
+        </section>
       <label for="message">Message:</label><br />
       <textarea
         id="message"
@@ -57,14 +66,16 @@
         rows="4"
         cols="50"
         placeholder="Enter your message here"
-        required
+        
       ></textarea
       ><br /><br />
+        <label for="color">Favorite Color:</label>
+      <input type="color" name="favorite_color" id="favorite_color" /><br /><br />
 
       <input type="checkbox" name="terms" id="terms" required />
-      <label for="">I agree to the terms and conditions</label><br /><br />
-      <input type="checkbox" name="" id="" />
-      <label for="">Send me a copy of this message</label><br /><br />
+      <label for="terms">I agree to the terms and conditions</label><br /><br />
+      <input type="checkbox" name="send_copy" id="send_copy" />
+      <label for="send_copy">Send me a copy of this message</label><br /><br />
 
       <input type="submit" value="Submit" />
     </form>
