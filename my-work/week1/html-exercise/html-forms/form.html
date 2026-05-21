@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is a form page where users can submit their information."
+    />
+    <title>Form Page</title>
+  </head>
+  <body>
+    <h1>Contact Form</h1>
+    <form action="">
+      <label for="name">First Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter you first name"
+        required
+      /><br /><br />
+
+      <label for="name">Last Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your last name"
+        required
+      /><br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      /><br /><br />
+      <label for="birthdate">Birth Date:</label>
+      <input type="date" name="birthdate" id="birthdate" />
+      <section id="gender">
+        <p>Gender:</p>
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="male">Male</label><br />
+
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">Female</label><br />
+        <input type="radio" name="gender" id="other" value="other" />
+        <label for="other">Other</label><br /><br />
+      </section>
+      <section>
+        Choose your favorite programming languages:
+        <select name="languages" id="javascript">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="csharp">C#</option>
+        </select><br /><br />
+        </section>
+      <label for="message">Message:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        cols="50"
+        placeholder="Enter your message here"
+        
+      ></textarea
+      ><br /><br />
+        <label for="color">Favorite Color:</label>
+      <input type="color" name="favorite_color" id="favorite_color" /><br /><br />
+
+      <input type="checkbox" name="terms" id="terms" required />
+      <label for="terms">I agree to the terms and conditions</label><br /><br />
+      <input type="checkbox" name="send_copy" id="send_copy" />
+      <label for="send_copy">Send me a copy of this message</label><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
