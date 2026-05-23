@@ -69,3 +69,27 @@ header p {
     font-family: 'Times New Roman', Times, serif
     /* Green */
 }
+
+.box-3 {
+    background-color: lightcoral;
+    font-family: 'Verdana', sans-serif;
+    /* Red */
+}
+
+.box-4 {
+    background-color: lightyellow;
+    font-family: 'Courier New', Courier, monospace;
+    /* Yellow */
+}
+
+.box-5 {
+    background-color: lightsalmon;
+    font-family: 'Georgia', cursive, sans-serif;
+    /* Salmon */
+}
+
+.box-6 {
+    background-color: lightpink;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* Pink */
+}
