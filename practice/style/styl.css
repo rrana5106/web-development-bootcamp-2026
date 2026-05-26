@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #425cdd;
+    color: white;
+    padding: 5px 25px;
+}
+
+logo{
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+}
+
+.navlinks{
+    display: flex;
+    gap: 20px;
+}
+
+.navlinks li{
+    list-style-type: none;
+}
+
+.navlinks a{
+    text-decoration: none;
+    color: white;
+
+}
+
+footer{
+    background: #425cdd;
+    padding: 10px 25px;
+    text-align: center;
+    color: white;
+}
