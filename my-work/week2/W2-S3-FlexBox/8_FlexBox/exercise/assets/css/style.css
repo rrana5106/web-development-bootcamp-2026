@@ -17,7 +17,7 @@ header {
 .navbar {
     /* TODO: explain the purpose of the following properties */
     display: flex;
-
+    /* it will make the .navbar flex container, it arrange the items in row or column */
     justify-content: center;
     background-color: #007BFF;
     padding: 10px;
@@ -41,7 +41,7 @@ header {
     /* TODO: explain the purpose of the following properties */
     flex-wrap: wrap;
     display: flex;
-
+    /* flex wrap,  it will preven page to over flow and it works with mxa-width*/
     justify-content: space-around;
     align-items: center;
     margin: 20px auto;
@@ -61,6 +61,7 @@ header {
 
     /* TODO: explain the purpose of the following properties */
     flex: 1 1 200px;
+    /* flex grow flex sink, go upto 200px  */
 }
 
 .box:hover {
