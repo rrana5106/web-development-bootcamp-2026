@@ -1,119 +1,181 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
 }
 
 .dashboard-container {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "header header"
-        "sidebar main";
-    height: 100vh;
-    gap: 10px;
+  display: grid;
+  /* Create 2 columns:
+       - First column (sidebar) is fixed at 250px wide
+       - Second column (main content) takes up the remaining available space */
+  grid-template-columns: 250px 1fr;
+  /* Create 2 rows:
+       - First row (header) adjusts its height based on content
+       - Second row takes up the remaining vertical space */
+  grid-template-rows: auto 1fr;
+  /* Define named grid areas:
+       Row 1: Header spans both columns
+       Row 2: Sidebar on the left, Main content on the right */
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  /* Make the grid fill the entire viewport height */
+  height: 100vh;
+  /* Add 10px spacing between rows and columns */
+  gap: 10px;
 }
 
 /* Header */
+/* Header Section */
 .header {
-    grid-area: header;
-    background-color: #4CAF50;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: white;
+  /* Places this element in the grid area named "header"
+     as defined in grid-template-areas */
+  grid-area: header;
+
+  /* Sets the background color of the header */
+  background-color: #4caf50;
+
+  /* Makes the header a flex container */
+  display: flex;
+
+  /* Pushes items to opposite ends
+     (e.g., logo on the left, navigation on the right) */
+  justify-content: space-between;
+
+  /* Vertically centers items within the header */
+  align-items: center;
+
+  /* Adds 20px space inside the header on all sides */
+  padding: 20px;
+
+  /* Sets the text color to white */
+  color: white;
 }
 
 .search-bar {
-    padding: 10px;
-    font-size: 1rem;
-    width: 60%;
+  padding: 10px;
+  font-size: 1rem;
+  width: 60%;
 }
 
 .user-avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 /* Sidebar */
 .sidebar {
-    grid-area: sidebar;
-    background-color: #333;
-    color: white;
-    padding: 20px;
+  grid-area: sidebar;
+  background-color: #333;
+  color: white;
+  padding: 20px;
 }
 
 .sidebar nav ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .sidebar nav ul li {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .sidebar nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
 
 .sidebar nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Main Content */
 .main-content {
-    grid-area: main;
-    background-color: #fff;
-    padding: 20px;
-    overflow-y: auto;
+  grid-area: main;
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 .main-content h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Task Table */
 .task-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
 .task-table thead {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
 .task-table th,
 .task-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
 .task-table th {
-    background-color: #333;
-    color: white;
+  background-color: #333;
+  color: white;
 }
 
 .complete-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .complete-btn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+  }
+  .sidebar {
+    text-align: center;
+  }
+
+  .header{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+
+  .search-bar{
+    width: auto;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
