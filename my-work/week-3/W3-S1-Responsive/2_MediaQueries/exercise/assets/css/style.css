@@ -78,6 +78,9 @@ img {
     background-size: cover;
 
     /* add 50% opacity to the background image */
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+
 }
 
 .product {
@@ -103,29 +106,45 @@ button {
 }
 
 /* TODO: describe what each of these rules do */
+
+
+/* ==========================================
+   TABLET & DESKTOP STYLES (Screens 768px and wider)
+   ========================================== */
 @media screen and (min-width: 768px) {
+    
+    /* Adds 40px of internal breathing room around the products container */
     .products {
         padding: 40px;
     }
 
+    /* Sets the width of each individual product box to exactly 300px */
     .product {
         width: 300px;
     }
 
+    /* Makes the banner element visible as a standard block-level element */
     .banner {
         display: block;
     }
 
+    /* Hides the mobile hamburger menu because the screen is now large enough */
     #mobile-menu {
         display: none;
     }
 
+    /* Shows the full desktop navigation menu now that there is plenty of room */
     #desktop-menu {
         display: block;
     }
 }
 
+/* ==========================================
+   LANDSCAPE ORIENTATION STYLES (Flipped sideways)
+   ========================================== */
 @media (orientation: landscape) {
+    
+    /* Changes the page background to a deep gold color when the screen is wider than it is tall */
     body {
         background-color: #ac8a04;
     }
