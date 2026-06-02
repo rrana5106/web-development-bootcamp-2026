@@ -1,1 +1,49 @@
 /* Custom Styles for overriding Bootstrap colors */
+
+:root {
+  /* Defining your custom Navy Blue and Gold colors */
+  --custom-primary: #0f4c81;
+  --custom-secondary: #f59e0b;
+}
+
+/* ==========================================================================
+   1. OVERRIDING UTILITY BACKGROUND CLASSES
+   ========================================================================== */
+
+/* Force .bg-primary to use your custom navy blue color */
+.bg-primary {
+  background-color: var(--custom-primary) !important;
+}
+
+/* Force .bg-secondary to use your custom gold color */
+.bg-secondary {
+  background-color: var(--custom-secondary) !important;
+}
+
+
+/* ==========================================================================
+   2. OVERRIDING BOOTSTRAP BUTTONS (Using Bootstrap's native CSS variables)
+   ========================================================================== */
+
+.btn-primary {
+  --bs-btn-bg: var(--custom-primary);
+  --bs-btn-border-color: var(--custom-primary);
+  
+  /* Hover and active state overrides so the colors don't jump back to default Bootstrap blue */
+  --bs-btn-hover-bg: #0b3a62; /* Slightly darker navy */
+  --bs-btn-hover-border-color: #0b3a62;
+  --bs-btn-active-bg: #082946;
+  --bs-btn-active-border-color: #082946;
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--custom-secondary);
+  --bs-btn-border-color: var(--custom-secondary);
+  --bs-btn-hover-color: #fff;
+  
+  /* Hover and active state overrides so the colors don't jump back to default Bootstrap gray */
+  --bs-btn-hover-bg: #d97706; /* Slightly darker gold */
+  --bs-btn-hover-border-color: #d97706;
+  --bs-btn-active-bg: #b45309;
+  --bs-btn-active-border-color: #b45309;
+}
