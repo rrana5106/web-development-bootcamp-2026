@@ -1,78 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jQuery UI Widgets Demo</title>
 
     <!-- jQuery and jQuery UI CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
 
-        .draggable-box {
-            width: 150px;
-            height: 150px;
-            background-color: #4CAF50;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            cursor: move;
-        }
+      .draggable-box {
+        width: 150px;
+        height: 150px;
+        background-color: #4caf50;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        cursor: move;
+      }
 
-        .datepicker {
-            margin-bottom: 20px;
-        }
+      .datepicker {
+        margin-bottom: 20px;
+      }
 
-        .autocomplete {
-            margin-bottom: 20px;
-        }
+      .autocomplete {
+        margin-bottom: 20px;
+      }
+
+      .ui-menu {
+        width: 150px;
+      }
+
+   
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h2>jQuery UI Widgets Demo</h2>
 
     <!-- Drag and Drop Box -->
-    <div class="draggable-box">
-        Drag Me
-    </div>
+    <div class="draggable-box">Drag Me</div>
 
     <!-- Date Picker Input -->
-    <p>Select a date: <input type="text" id="datepicker" class="datepicker"></p>
+    <h2>Date picker input</h2>
+    <p>
+      Select a date: <input type="text" id="datepicker" class="datepicker" />
+    </p>
 
     <!-- Autocomplete Input -->
-    <p>Start typing a fruit: <input type="text" id="autocomplete" class="autocomplete"></p>
+    <h2>Autocomplete</h2>
+    <p>
+      Start typing a fruit:
+      <input type="text" id="autocomplete" class="autocomplete" />
+    </p>
 
+    <!-- Accordion -->
+    <h2>Accordion</h2>
+    <div id="accordion">
+      <h3>Section 1</h3>
+      <div>
+        <p>Content for Section 1</p>
+      </div>
+      <h3>Section 2</h3>
+      <div>
+        <p>Content for Section 2</p>
+      </div>
+      <h3>Section 3</h3>
+      <div>
+        <p>Content for Section 3</p>
+        <ul>
+          <li>List item one</li>
+          <li>List item two</li>
+          <li>List item three</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Dialog -->
+    <h2>Dialog</h2>
+    <section class="dialog">
+      <ul id="menu">
+        <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+        <li><div>Books</div></li>
+        <li><div>Clothing</div></li>
+        <li>
+          <div>Electronics</div>
+          <ul>
+            <li class="ui-state-disabled"><div>Home Entertainment</div></li>
+            <li><div>Car Hifi</div></li>
+            <li><div>Utilities</div></li>
+          </ul>
+        </li>
+        <li><div>Movies</div></li>
+        <li>
+          <div>Music</div>
+          <ul>
+            <li>
+              <div>Rock</div>
+              <ul>
+                <li><div>Alternative</div></li>
+                <li><div>Classic</div></li>
+              </ul>
+            </li>
+            <li>
+              <div>Jazz</div>
+              <ul>
+                <li><div>Freejazz</div></li>
+                <li><div>Big Band</div></li>
+                <li><div>Modern</div></li>
+              </ul>
+            </li>
+            <li><div>Pop</div></li>
+          </ul>
+        </li>
+        <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+      </ul>
+    </section>
+    <!-- Progress bar -->
+    <section class="progress-bar">
+      <h2>Progress Bar</h2>
+      <div id="progressbar"></div>
+    </section>
     <script>
-        $(document).ready(function () {
-            // Draggable widget
-            $(".draggable-box").draggable();
+      $(document).ready(function () {
+        // Draggable widget
+        $(".draggable-box").draggable();
 
-            // Datepicker widget
-            $("#datepicker").datepicker();
+        // Datepicker widget
+        $("#datepicker").datepicker();
 
-            // Autocomplete widget
-            var availableFruits = [
-                "Apple", "Banana", "Cherry", "Date", "Grape", "Lemon", "Mango", "Orange",
-                "Peach", "Pineapple", "Strawberry", "Watermelon"
-            ];
-            $("#autocomplete").autocomplete({
-                source: availableFruits
-            });
+        // Autocomplete widget
+        var availableFruits = [
+          "Apple",
+          "Banana",
+          "Cherry",
+          "Date",
+          "Grape",
+          "Lemon",
+          "Mango",
+          "Orange",
+          "Peach",
+          "Pineapple",
+          "Strawberry",
+          "Watermelon",
+        ];
+        $("#autocomplete").autocomplete({
+          source: availableFruits,
         });
+      });
+
+      $(function () {
+        $("#accordion").accordion();
+      });
+
+      $(function () {
+        $("#menu").menu();
+      });
+
+      $(function () {
+        $("#progressbar").progressbar({
+          value: 50,
+        });
+        $("#progressbar").css({"background": "#4caf50", "width":"150px"});
+        
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
